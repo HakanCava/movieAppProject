@@ -1,13 +1,157 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Acme", sans-serif;
+  /* background-color: rgba(0, 0, 0, 1); */
 }
+
+@layer base {
+  input {
+    @apply block py-2.5 px-0 w-full text-lg text-white bg-transparent border-0 border-b-2 border-main-yellow appearance-none dark:text-black dark:border-gray-600 dark:focus:border-red-400 focus:outline-none focus:ring-0 focus:border-main-green;
+  }
+
+  label {
+    @apply peer-focus:font-medium absolute text-lg text-gray-300 dark:text-gray-800 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-main-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ;
+  }
+
+}
+
+
+@layer components{
+  .btn-submit{
+    @apply  text-main-yellow text-lg bg-[#C14C01] hover:bg-[#c14b01e8] focus:ring-4 focus:outline-none focus:ring-main-yellow font-medium rounded-lg  w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-700 dark:hover:bg-red-600 dark:focus:ring-red-800 text-[1.2rem]
+  }
+
+  .btn-google{
+    @apply  text-main-yellow text-lg bg-[#C14C01] hover:bg-[#c14b01e8] focus:ring-4 focus:outline-none focus:ring-main-yellow font-medium rounded-lg  w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-700 dark:hover:bg-red-600 dark:focus:ring-red-800 text-[1.2rem] mt-2
+  }
+  .btn-danger-bordered {
+    @apply text-black hover:text-white border-2 border-gray-300 hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-[1.1rem] px-5 py-2.5 text-center mr-2 mb-2 dark:border-main-yellow dark:text-gray-200 dark:hover:text-white dark:hover:bg-gray-50 dark:focus:ring-gray-500;
+  }
+  .form-container{
+    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-gray-100 dark:bg-[#1c1c1c] before:content-[""] before:absolute before:w-[380px] before:h-[420px] before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] after:h-[420px] after:top-[-50%] after:left-[-50%] custom-linear-gradient 
+  }
+
+  .form-container form{
+    @apply absolute inset-[2px]  border p-10  border-main-yellow bg-[#130413] rounded-[1rem]  dark:bg-[#CAC531]  z-[10] flex flex-col py-[50px] px-[40px] mt-[3px] mb-[3px]
+  }
+  
+}
+
+.custom-linear-gradient::before {
+  background: linear-gradient(0deg, rgb(255, 0, 0), rgb(255, 0, 0));
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.custom-linear-gradient::after {
+  background: linear-gradient(0deg, rgb(0, 255, 0), rgb(0, 0, 255));
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
+
+.register,.login{
+  background-image: url(https://cdn.pixabay.com/photo/2016/04/14/07/50/film-1328405_960_720.jpg);
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+
+/* MovieCard Custom CSS */
+.movie {
+  background-color: #080f36;
+  border-radius: 3px;
+  box-shadow: 4px 4px 5px rgba(63, 60, 60, 0.5);
+  overflow: hidden;
+  margin: 1rem;
+  width: 300px;
+  height: 510px;
+  position: relative;
+  cursor: pointer;
+}
+
+.movie img {
+  object-fit: cover;
+  height: 450px;
+  max-width: 100%;
+}
+
+.movie-over {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-over {
+  transform: translateY(0%);
+}
+
+.tag {
+  border-radius: 5px;
+  padding: 0.7rem;
+  font-weight: bold;
+  width: 3rem;
+  text-align: center;
+}
+
+.kalp{
+  border-radius: 5px;
+  padding: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: red;
+  margin-right: 0.5rem;
+}
+
+.tag.green {
+  background-color: #1b5e20;
+}
+
+.tag.orange {
+  background-color: #f57f17;
+}
+
+.tag.red {
+  background-color: #7f0000;
+}
+
+.form-image {
+  min-width: 800px;
+  min-height: 600px;
+}
+
+
+
+
+
+
