@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Movie App Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `Installation`
 
-## Available Scripts
+```
+yarn create react-app (folderName OR .)
+```
 
-In the project directory, you can run:
+## `Libraries Used`
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `axios`
+- `react-router-dom`
+- `react-hot-toast`
+- `firebase`
+- `react-toastify`
+- `tw-elements`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `yarn test`
+## `What am I doing`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- In this project, I am making a movie application.
+- Each movie card should have summary information and rating about the movie.
+- I am using Firebase for authentication operations.
+- Crud operations are performed according to the swagger and redoc documents from the backend.
 
-### `yarn build`
+## Project Skeleton
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+├── public
+│     └── index.html
+├── src
+│    ├── assets
+│    │     └── myAvatar.png
+│    ├── auth
+|    │     └── firebase.js
+│    ├── components
+│    │     ├── Footer.jsx
+│    |     ├── MovieCard.jsx
+│    │     └── Navbar.jsx
+│    ├── context
+│    |     ├── AuthContext.js
+│    │     └── MovieContext.js
+│    ├── helpers
+│    │     └── ToastNotify.js
+│    ├── pages
+│    │     ├── About.jsx
+│    │     ├── Contact.jsx
+│    │     ├── HighScore.jsx
+│    │     ├── Home.jsx
+│    │     ├── Licensing.jsx
+│    │     ├── Login.jsx
+│    │     ├── LowScore.jsx
+│    │     ├── MovieDetails.jsx
+│    │     ├── NotFound.jsx
+│    │     ├── Policy.jsx
+│    │     ├── Register.jsx
+│    │     └── Trends.jsx
+│    ├── router
+│    │     ├── AppRouter.jsx
+│    │     └── PrivateRouter.jsx
+│    ├── App.js
+│    ├── index.js
+│    └── index.css
+├── package.json
+├── .gitignore
+└── yarn.lock
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## `Tools Used`
 
-### `yarn eject`
+- `Redux Dev Tools` : It is a browser extension that runs on Chrome and enables tracking of all changes made to the global state. For download [click here.](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?utm_source=chrome-ntp-icon)`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## `Gif`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![movie-app](movieapp-gif.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## `Live`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- https://movie-app-project-theta.vercel.app/
